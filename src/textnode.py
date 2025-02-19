@@ -1,8 +1,8 @@
 from enum import Enum
 from typing import Self
 
-class InlineText(Enum):
-    NORMAL = "normal"
+class TextType(Enum):
+    TEXT="text"
     BOLD = "bold"
     ITALIC = "italic"
     CODE = "code"
@@ -10,7 +10,7 @@ class InlineText(Enum):
     IMAGE = "image"
 
 class TextNode:
-    def __init__(self, text: str, text_type: InlineText, url: str | None = None):
+    def __init__(self, text: str, text_type: TextType, url: str | None = None):
         self.text = text
         self.text_type = text_type
         self.url = url
