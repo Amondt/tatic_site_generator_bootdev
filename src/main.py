@@ -1,5 +1,6 @@
 from textnode import *
 from htmlnode import *
+from converters import *
 
 def main():
     my_bold_node = TextNode("This is a text node", TextType.BOLD, "https://www.boot.dev")
@@ -7,6 +8,10 @@ def main():
 
     my_text_node = TextNode("This is a text node", TextType.TEXT, "https://www.boot.dev")
     text_node_to_html_node(my_text_node)
+
+    node = TextNode("This is text with a `code block` word", TextType.TEXT)
+    new_nodes = split_nodes_delimiter([node], "`", TextType.CODE)
+    print(new_nodes)
 
     # Create a test structure with different types of nodes
     test_node = ParentNode("div", [
