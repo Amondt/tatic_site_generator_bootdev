@@ -2,8 +2,11 @@ from textnode import *
 from htmlnode import *
 
 def main():
-    my_text_node = TextNode("This is a text node", TextType.BOLD, "https://www.boot.dev")
-    print(my_text_node)
+    my_bold_node = TextNode("This is a text node", TextType.BOLD, "https://www.boot.dev")
+    print(my_bold_node)
+
+    my_text_node = TextNode("This is a text node", TextType.TEXT, "https://www.boot.dev")
+    text_node_to_html_node(my_text_node)
 
     # Create a test structure with different types of nodes
     test_node = ParentNode("div", [
